@@ -3,7 +3,7 @@
         // 1. Ir a https://openweathermap.org/
         // 2. Crear una cuenta gratuita.
         // 3. Ir a la sección "API keys" y copiar la clave.
-        const apiKey = '4dfaa790a6b26a32de018da9700bb1ab'; // <--- PEGA TU API KEY AQUÍ
+        const apiKey = '37af9c4e9ef55d3ba71a017d24a347f4'; // <--- PEGA TU API KEY AQUÍ
 
         // --- ELEMENTOS DEL DOM ---
         // Obtenemos referencias a los elementos HTML que vamos a manipular.
