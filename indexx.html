@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App del Clima | Proyecto JavaScript</title>
+   
+    <!-- Incluimos Tailwind CSS para un diseño rápido y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <!-- Incluimos la librería de íconos Lucide para una mejor estética -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilo para la fuente principal y un fondo degradado */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to top, #6a85b6, #bac8e0);
+        }
+        /* Estilos para el estado de carga (spinner) */
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #FFF;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-md mx-auto bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl shadow-2xl p-6 md:p-8">
+       
+        <h1 class="text-3xl font-bold text-center text-white mb-6">App del Clima</h1>
+
+        <!-- Formulario de Búsqueda -->
+        <div class="flex items-center bg-white rounded-full shadow-md mb-6">
+            <input type="text" id="cityInput" placeholder="Busca una ciudad..." class="w-full bg-transparent text-gray-700 py-3 px-5 rounded-full focus:outline-none">
+            <button id="searchButton" class="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full transition-colors duration-300 mr-1">
+                <svg id="searchIcon" class="w-6 h-6" data-lucide="search"></svg>
+            </button>
+        </div>
+
+        <!-- Contenedor para mostrar los resultados del clima -->
+        <div id="weatherResult" class="text-center text-white hidden">
+            <h2 id="cityName" class="text-4xl font-bold"></h2>
+            <div class="flex items-center justify-center my-4">
+                <img id="weatherIcon" src="" alt="Ícono del Clima" class="w-24 h-24">
+            </div>
+            <p id="temperature" class="text-6xl font-light"></p>
+            <p id="description" class="text-xl capitalize mt-2"></p>
+        </div>
+
+        <!-- Mensaje de bienvenida inicial -->
+        <div id="welcomeMessage" class="text-center text-white p-4">
+            <p class="text-lg">Ingresa el nombre de una ciudad para ver el clima.</p>
+        </div>
+
+        <!-- Indicador de Carga (Spinner) -->
+        <div id="loader" class="text-center hidden mt-8">
+            <div class="loader mx-auto"></div>
+            <p class="text-white mt-2">Buscando...</p>
+        </div>
+
+        <!-- Contenedor para mostrar mensajes de error -->
+        <div id="errorMessage" class="text-center bg-red-500 bg-opacity-70 text-white p-4 rounded-lg hidden">
+        </div>
+
+    </div>
+
+    <script src="clima2.js">
+
+    </script>
+</body>
+</html>
